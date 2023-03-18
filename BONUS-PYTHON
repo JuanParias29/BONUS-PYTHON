@@ -1,0 +1,41 @@
+x=int(input("0 para salir, 1 para continuar:"))
+
+while (x!=0):
+
+    poblacionA=int(input("poblacion de conejos ayer:"))
+    poblacionB=int(input("población de conejos hoy:"))
+
+    poblacionC=poblacionA+poblacionB
+    dias=0
+    while (poblacionC<70000):
+
+        if(poblacionC<70000):
+            poblacionA=poblacionB
+            poblacionB=poblacionC
+            poblacionC=poblacionA+poblacionB
+            dias=dias+1
+        if(poblacionC>=70000):
+            print("en",dias, " dias los conejos deberan ser exportados a otra isla")
+
+    x = int(input("0 para salir, 1 para continuar:"))
+
+print("a continuacion se mostraran los números ineficientes, perfectos o abundates entre el 1 y el 30:")
+
+print("\n")
+
+import time
+
+for i in range(1, 31):
+    divisores=0
+    for j in range(1, i):
+        if i % j == 0:
+            divisores=divisores+j
+
+    if (divisores<i):
+        print(i,"es un número deficiente.")
+    elif (divisores==i):
+        print(i,"es un número perfecto.")
+    elif (divisores>i):
+        print(i,"es un número abundante.")
+
+    time.sleep(0.5)
